@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#calendar {
+    display : flex;
+    flex-direction: column;
+    max-width: 800px;
+    height: fit-content;
+    justify-content: center;
+    border: 2px solid black;
+}
+#calendar > div{
+    width : 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#calendar > #yearBlock,#calendar > #monthBlock{
+    height: 40px;
+    border-bottom: 2px solid black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#calendar > #yearBlock{
+    position: relative;
+}
+#calendar > #yearBlock > #prevMonthButton,#calendar > #yearBlock > #nextMonthButton{
+    position: absolute;
+    display: block;
+}
+#calendar > #yearBlock > #prevMonthButton::before,#calendar > #yearBlock > #nextMonthButton::before{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#calendar > #yearBlock > #prevMonthButton{
+    left : 10px;
+}
+#calendar > #yearBlock > #nextMonthButton{
+    right : 10px;
+}
+#calendar > #yearBlock > #prevMonthButton::before{
+    content: '이전 달';
+}
+#calendar > #yearBlock > #nextMonthButton::before{
+    content: '다음 달';
+}
+
+#calendar > #dayOfWeekBlock{
+    height: 20px;
+    border-bottom: 2px solid black;
+}
+#calendar > #dayOfWeekBlock > div{
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#calendar > #calendarBlock {
+    flex-direction: column;
+}
+#calendar > #calendarBlock > .weekBlock{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+#calendar > #calendarBlock > .weekBlock:not(:last-of-type){
+    border-bottom: 2px solid black;
+}
+
+#calendar > #calendarBlock > .weekBlock > .dayBlock{
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+#calendar > #calendarBlock > .weekBlock > .dayBlock > .isToday{
+    color: blue;
+}
+#calendar > #calendarBlock > .weekBlock > .dayBlock > .notMonth{
+    background-color: gray;
+    color: white;
+}
+
+
+
+#calendar > #calendarBlock > .weekBlock > .dayBlock:not(:last-of-type){
+    border-right: 2px solid black;
+}
+#calendar > #calendarBlock > .weekBlock > .dayBlock > span{
+    width : 100%;
+    height : 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
 }
