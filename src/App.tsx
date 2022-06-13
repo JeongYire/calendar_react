@@ -1,9 +1,9 @@
-import Calendar from './Calendar';
+import Calendar from "./Calendar";
 function App() {
-  return (
-    <div id="body" style={{"width" : "100%"}}>
-        <Calendar />
-    </div>
-  );
+    return (
+        <div id="body" style={{ width: "100%" }}>
+            <Calendar />
+        </div>
+    );
 }
 export default App;
