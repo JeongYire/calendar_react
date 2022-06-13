@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { BaseDateContext } from "../Context";
 import CalendarButton from "../CalendarButton";
-import { BaseDateContextType } from "../Context/BaseDateContext";
+import { BaseDateContextType, useBaseDate } from "../Context/BaseDateContext";
 
 const YearBlock = () => {
-    const { baseDate }: Pick<BaseDateContextType, "baseDate"> =
-        useContext<BaseDateContextType>(BaseDateContext);
+    const { baseDate }: Pick<BaseDateContextType, "baseDate"> = useBaseDate();
     return (
         <div id="yearBlock">
             <span>{baseDate.getFullYear()}년</span>

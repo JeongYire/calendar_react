@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export type BaseDateContextType = {
     baseDate: Date;
@@ -6,3 +6,7 @@ export type BaseDateContextType = {
 };
 
 export const BaseDateContext = createContext<BaseDateContextType>(null!);
+
+export const useBaseDate = () => {
+    return useContext<BaseDateContextType>(BaseDateContext);
+};

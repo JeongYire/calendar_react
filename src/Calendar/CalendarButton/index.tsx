@@ -1,10 +1,8 @@
-import { useContext } from "react";
 import { DateFormat } from "../../types";
-import { BaseDateContext } from "../Context";
-import { BaseDateContextType } from "../Context/BaseDateContext";
+import { useBaseDate } from "../Context/BaseDateContext";
 
 const CalendarButton = () => {
-    const { setDate } = useContext<BaseDateContextType>(BaseDateContext);
+    const { setDate } = useBaseDate();
 
     const nextMonth = () => {
         setDate((prevValue: DateFormat) => {

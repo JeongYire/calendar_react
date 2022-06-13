@@ -1,10 +1,8 @@
-import { useContext, useMemo } from "react";
-import { BaseDateContext } from "../Context";
-import { BaseDateContextType } from "../Context/BaseDateContext";
+import { useMemo } from "react";
+import { BaseDateContextType, useBaseDate } from "../Context/BaseDateContext";
 
 const MonthBlock = () => {
-    const { baseDate }: Pick<BaseDateContextType, "baseDate"> =
-        useContext<BaseDateContextType>(BaseDateContext);
+    const { baseDate }: Pick<BaseDateContextType, "baseDate"> = useBaseDate();
 
     const month = useMemo(() => baseDate.getMonth(), [baseDate]);
 
