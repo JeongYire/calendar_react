@@ -1,3 +1,10 @@
 import { createContext } from "react";
 
-export const CalendarColumnContext = createContext<any>(null);
+export type CalendarColumnContextType = {
+    targetDate: Date;
+    today: React.MutableRefObject<Date>;
+};
+
+export const CalendarColumnContext = createContext<CalendarColumnContextType>(
+    null!
+);
