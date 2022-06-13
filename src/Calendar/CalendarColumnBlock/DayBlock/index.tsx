@@ -1,16 +1,9 @@
-import { useContext } from "react";
-import { BaseDateContext, CalendarColumnContext } from "../../Context";
-import { BaseDateContextType } from "../../Context/BaseDateContext";
-import { CalendarColumnContextType } from "../../Context/CalendarColumnContext";
+import { useBaseDate } from "../../Context/BaseDateContext";
+import { useCalendarColumnContext } from "../../Context/CalendarColumnContext";
 
 const DayBlock = () => {
-    const { baseDate } = useContext<BaseDateContextType>(BaseDateContext);
-    const { targetDate } = useContext<CalendarColumnContextType>(
-        CalendarColumnContext
-    );
-    const { today } = useContext<CalendarColumnContextType>(
-        CalendarColumnContext
-    );
+    const { baseDate } = useBaseDate();
+    const { targetDate, today } = useCalendarColumnContext();
 
     const isSameMonth = (): boolean =>
         targetDate.getMonth() === baseDate.getMonth();

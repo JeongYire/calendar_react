@@ -1,11 +1,10 @@
-import { useContext, useRef } from "react";
-import { BaseDateContext, CalendarColumnContext } from "../Context";
-import { BaseDateContextType } from "../Context/BaseDateContext";
+import { useRef } from "react";
+import { CalendarColumnContext } from "../Context";
+import { BaseDateContextType, useBaseDate } from "../Context/BaseDateContext";
 import WeekBlock from "./WeekBlock";
 
 const CalendarColumnBlock = () => {
-    const { baseDate }: { baseDate: Date } =
-        useContext<BaseDateContextType>(BaseDateContext);
+    const { baseDate }: Pick<BaseDateContextType, "baseDate"> = useBaseDate();
     const today = useRef(new Date());
 
     const targetDate = new Date(baseDate);

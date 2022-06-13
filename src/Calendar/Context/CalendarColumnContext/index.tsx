@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export type CalendarColumnContextType = {
     targetDate: Date;
@@ -8,3 +8,7 @@ export type CalendarColumnContextType = {
 export const CalendarColumnContext = createContext<CalendarColumnContextType>(
     null!
 );
+
+export const useCalendarColumnContext = () => {
+    return useContext<CalendarColumnContextType>(CalendarColumnContext);
+};
